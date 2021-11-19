@@ -4,7 +4,7 @@ PROTOCOL = 'ws' //ws or wss PROTOCOL
 
 const sendBtn = document.querySelector('#tosendb');
 const authBtn = document.querySelector('#tosendb_auth');
-var pingSnd = new Audio("https://carbon.pp.ua/ping.ogg");
+var pingSnd = new Audio("https://carbon.pp.ua/data/ping.ogg");
 pingSnd.volume = 1;
 let ustate = 0;
 let name = "None";
