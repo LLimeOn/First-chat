@@ -26,8 +26,9 @@
 
         <div class="allk" id="chat_a" hidden>
             <div id="code_room"></div>
-            <div class="block chat" id="chatik">
-                <div class="messages">
+            <div class="block chat" id="chatik" style="flex-direction: column; display: flex;">
+                <div class="wd" style="flex: 1 0 auto;"></div>
+                <div class="messages" style="flex: 0 0 auto;">
                     <div class="contm" id="contm">
                         <p><code>Конец чата</code></p>
                     </div>
@@ -39,7 +40,11 @@
                 <img title="Персоанализация" class="hover_img" id="rlpant" style="position: absolute; top: 70px; right: 30px; cursor: pointer; border-radius: 70px;" src="data/pant.svg" width="13" height="13"></img>
                 <img title="Параметры звука" class="hover_img" id="rlvolu" style="position: absolute; top: 110px; right: 30px; cursor: pointer; border-radius: 70px;" src="data/volu.svg" width="13" height="13"></img>
 
-                <div ><input class="volume_box" id="slider_volu" type="range" min="0" max="1" value="1" step="0.01" style="position: absolute; top: 110px; right: 17px; cursor: pointer; border-radius: 70px;" hidden></div>
+                <div><input class="volume_box" id="slider_volu" type="range" min="0" max="1" value="1" step="0.01" style="position: absolute; top: 110px; right: 17px; cursor: pointer; border-radius: 70px;" hidden></div>
+                <div style="text-align: center; color: white; width:200px; position: absolute; right: 68px; background-color: #444444; padding: 20px; border-radius: 20px;" id="urelka" hidden>
+                    <input class="sendtext_r" style="width: 90%; text-align: center; color: #bbbbbb;" placeholder="Url image" type="text" name="urelka" id="urelkain" id="url_pole">
+                    <input class="sendtext_r" style="width: 50%; margin-top: 15px; color: #bbbbbb; padding: 5px; height: auto; cursor: pointer;" placeholder="Url image" type="button" name="urelka" id="urelkaincom" value="Применить">
+                </div>
 
                 <div class="ent" id="iente">
                     <div contenteditable="true" placeholder="Message" class="sendtext" id="snd_v" style="resize: none;"></div>

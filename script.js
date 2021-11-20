@@ -66,17 +66,21 @@ socket.onmessage = function (e) {
             };
             return false;
         case "message":
+            img = rc.img;
+            if (img == "#00FFFF") {
+                img = "data/thumb_user.png"
+            };
             if (sound_set) {
                 console.log(sound_set);
-                pingSnd.play()
-            }
+                pingSnd.play();
+            };
             data = decodeURI(rc.text);
-            data = data.replace(/(?:\r\n|\r|\n)/g, '</br>')
-            name_m = decodeURI(rc.name)
+            data = data.replace(/(?:\r\n|\r|\n)/g, '</br>');
+            name_m = decodeURI(rc.name);
             p = document.createElement('p');
             // p.innerHTML = `${data}`;
             // p.innerHTML = `<code>${name_m}</code>: <div class="bvgkk">${data}</div>`;
-            p.innerHTML = `<img src="data/thumb_user.png" aria-hidden="true" class="avatar-1BDn8e clickable-1bVtEA" alt=" " width="35" style="border-radius:50%; position: absolute;"><code style="display: inline-flex; padding-left: 44px; font-size: 13px; margin-bottom: 2px;">${name_m}</code><br><div style="display: inline-flex;padding-left: 44px;color: #cbcbcb;">${data}</div>`;
+            p.innerHTML = `<img src="${img}" aria-hidden="true" class="avatar-1BDn8e clickable-1bVtEA" alt=" " width="35" height="35" style="border-radius:18px; position: absolute;"><code style="display: inline-flex; padding-left: 44px; font-size: 13px; margin-bottom: 2px;">${name_m}</code><br><div style="display: inline-flex;padding-left: 44px;color: #cbcbcb;">${data}</div>`;
             p.setAttribute("onclick", "this.hidden = true");
             p.setAttribute("style", "position: relative; margin-top: 15px;");
             contm.append(p);
@@ -94,9 +98,15 @@ socket.onmessage = function (e) {
             for (let i = rc.list.length - 1; i >= 0; i--) {
                 let ert = rc.list.length - i - 1;
                 let listik = rc.list[ert];
+                let img = listik.img;
+                if (img == "#00FFFF") {
+                    img = "data/thumb_user.png"
+                };
+                let data = decodeURI(listik.message);
+                data = data.replace(/(?:\r\n|\r|\n)/g, '</br>');
                 console.log(listik);
                 p = document.createElement('p');
-                p.innerHTML = `<img src="data/thumb_user.png" aria-hidden="true" class="avatar-1BDn8e clickable-1bVtEA" alt=" " width="35" style="border-radius:50%; position: absolute;"><code style="display: inline-flex; padding-left: 44px; font-size: 13px; margin-bottom: 2px;">${decodeURI(listik.name)}</code><br><div style="display: inline-flex;padding-left: 44px;color: #cbcbcb;">${decodeURI(listik.message)}</div>`;
+                p.innerHTML = `<img src="${img}" aria-hidden="true" class="avatar-1BDn8e clickable-1bVtEA" alt=" " width="35" height="35" style="border-radius:18px; position: absolute;"><code style="display: inline-flex; padding-left: 44px; font-size: 13px; margin-bottom: 2px;">${decodeURI(listik.name)}</code><br><div style="display: inline-flex;padding-left: 44px;color: #cbcbcb;">${data}</div>`;
                 p.setAttribute("onclick", "this.hidden = true");
                 p.setAttribute("style", "position: relative; margin-top: 15px;");
                 contm.append(p);
@@ -158,8 +168,50 @@ function typing() {
 
 let sclf = 0;
 
+// rlpant.addEventListener("click", function(event) {
+//     bki.style.backgroundImage = "url('https://i.imgur.com/d6eO5HC.jpg')"
+// });
+
+let vlumebnbxu = 0;
+
+
+
 rlpant.addEventListener("click", function(event) {
-    bki.style.backgroundImage = "url('https://i.imgur.com/d6eO5HC.jpg')"
+    urelka.style.top = `${rlpant.style.top}`;
+    if (vlumebnbxu < 1) {
+        urelka.hidden = false;
+        vlumebnbxu = 1;
+    } else if (vlumebnbxu > 0) {
+        urelka.hidden = true;
+        vlumebnbxu = 0;
+    }
+});
+
+urelkain.addEventListener('focus', function (event) {
+    console.log("focus");
+    anime({
+        targets: '#urelkain',
+        borderRadius: '5px',
+        width: '95%',
+
+    });
+});
+
+urelkain.addEventListener('blur', function (event) {
+    console.log("blur");
+    anime({
+        targets: '#urelkain',
+        width: '85%'
+
+    });
+});
+
+urelkaincom.addEventListener("click", function(event) {
+    if (urelkain.value.startsWith('https://') && urelkain.value.endsWith('.png')) {
+        socket.send(JSON.stringify({type: "setIMG", img: urelkain.value, name: name}));
+    } else {
+        erreor_add("Не верный формат ссылки на изображение")
+    }
 });
 
 rlscale.addEventListener("click", function(event) {
@@ -526,6 +578,14 @@ socket.onclose = function(event) {
         alert_text = "Fail to connect to server";
     };
 };
+
+function erreor_add(error) {
+    var div = `<div class='block_e'><div class='poof'><p class='error_text'>error: ${error}</p></div></div>`;
+    $("#tm_a").append(div);
+    setTimeout(function () {
+        $('.block_e')[0].remove();
+    }, 3000);
+}
 
 socket.onerror = function(error) {
     var div = `<div class='block_e'><div class='poof'><p class='error_text'>error: ${error.message}</p></div></div>`;
