@@ -75,8 +75,10 @@ socket.onmessage = function (e) {
             name_m = decodeURI(rc.name)
             p = document.createElement('p');
             // p.innerHTML = `${data}`;
-            p.innerHTML = `<code>${name_m}</code>: <div class="bvgkk">${data}</div>`;
+            // p.innerHTML = `<code>${name_m}</code>: <div class="bvgkk">${data}</div>`;
+            p.innerHTML = `<img src="data/thumb_user.png" aria-hidden="true" class="avatar-1BDn8e clickable-1bVtEA" alt=" " width="35" style="border-radius:50%; position: absolute;"><code style="display: inline-flex; padding-left: 44px; font-size: 13px; margin-bottom: 2px;">${name_m}</code><br><div style="display: inline-flex;padding-left: 44px;color: #cbcbcb;">${data}</div>`;
             p.setAttribute("onclick", "this.hidden = true");
+            p.setAttribute("style", "position: relative; margin-top: 15px;");
             contm.append(p);
             chatik.scrollBy(0,1000);
             return false;
@@ -93,7 +95,11 @@ socket.onmessage = function (e) {
                 let ert = rc.list.length - i - 1;
                 let listik = rc.list[ert];
                 console.log(listik);
-                $("#contm").append(`<p onclick="this.hidden = true"><code>${decodeURI(listik.name)}</code>: ${decodeURI(listik.message)}</p>`);
+                p = document.createElement('p');
+                p.innerHTML = `<img src="data/thumb_user.png" aria-hidden="true" class="avatar-1BDn8e clickable-1bVtEA" alt=" " width="35" style="border-radius:50%; position: absolute;"><code style="display: inline-flex; padding-left: 44px; font-size: 13px; margin-bottom: 2px;">${decodeURI(listik.name)}</code><br><div style="display: inline-flex;padding-left: 44px;color: #cbcbcb;">${decodeURI(listik.message)}</div>`;
+                p.setAttribute("onclick", "this.hidden = true");
+                p.setAttribute("style", "position: relative; margin-top: 15px;");
+                contm.append(p);
             };
             return false;
         case "exited":

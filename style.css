@@ -153,8 +153,17 @@ p {
     height: 30px;
 }
 
+p {
+    padding: 5px;
+    border-radius: 22px;
+}
+
+p:hover {
+    background-color: #00000014;
+}
+
 code {
-    background-color: #ffffff44;
+    /*background-color: #ffffff44;*/
     border-radius: 2px;
     padding: 1px;
 }
