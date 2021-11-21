@@ -530,6 +530,9 @@ socket.onopen = function() {
         $('.block_e')[0].remove();
     }, 3000);
     console.log("Connected.");
+    if (Cookies.get("name")) {
+        socket.send(JSON.stringify({type: "auth_cookie", token: Cookies.get("name")}));
+    }
     // token = localStorage.getItem('skrepka.battleships.token.login');
     // let token = "1";
     // if (token) {
