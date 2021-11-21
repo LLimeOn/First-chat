@@ -80,7 +80,7 @@ socket.onmessage = function (e) {
             p = document.createElement('p');
             // p.innerHTML = `${data}`;
             // p.innerHTML = `<code>${name_m}</code>: <div class="bvgkk">${data}</div>`;
-            p.innerHTML = `<img onError="this.src='data/thumb_user.png'" src="${img}" aria-hidden="true" class="avatar-1BDn8e clickable-1bVtEA" alt=" " width="35" height="35" style="border-radius:18px; position: absolute;"><code style="display: inline-flex; padding-left: 44px; font-size: 13px; margin-bottom: 2px;">${name_m}</code><br><div style="display: inline-flex;padding-left: 44px;color: #cbcbcb;">${data}</div>`;
+            p.innerHTML = `<img onError="this.src='data/thumb_user.png'" src="${img}" aria-hidden="true" class="avatar-1BDn8e clickable-1bVtEA" alt=" " width="35" height="35" style="border-radius:18px; position: absolute;"><code style="display: inline-flex; padding-left: 44px; font-size: 13px; margin-bottom: 2px;">${name_m}</code><br><div style="display: inline-flex;padding-left: 44px;color: #cbcbcb; flex-direction: column;">${data}</div>`;
             p.setAttribute("onclick", "this.hidden = true");
             p.setAttribute("style", "position: relative; margin-top: 10px;");
             contm.append(p);
@@ -106,7 +106,7 @@ socket.onmessage = function (e) {
                 data = data.replace(/(?:\r\n|\r|\n)/g, '</br>');
                 console.log(listik);
                 p = document.createElement('p');
-                p.innerHTML = `<img onError="this.src='data/thumb_user.png'" src="${img}" aria-hidden="true" class="avatar-1BDn8e clickable-1bVtEA" alt=" " width="35" height="35" style="border-radius:18px; position: absolute;"><code style="display: inline-flex; padding-left: 44px; font-size: 13px; margin-bottom: 2px;">${decodeURI(listik.name)}</code><br><div style="display: inline-flex;padding-left: 44px;color: #cbcbcb;">${data}</div>`;
+                p.innerHTML = `<img onError="this.src='data/thumb_user.png'" src="${img}" aria-hidden="true" class="avatar-1BDn8e clickable-1bVtEA" alt=" " width="35" height="35" style="border-radius:18px; position: absolute;"><code style="display: inline-flex; padding-left: 44px; font-size: 13px; margin-bottom: 2px;">${decodeURI(listik.name)}</code><br><div style="display: inline-flex;padding-left: 44px;color: #cbcbcb; flex-direction: column;">${data}</div>`;
                 p.setAttribute("onclick", "this.hidden = true");
                 p.setAttribute("style", "position: relative; margin-top: 10px;");
                 contm.append(p);
