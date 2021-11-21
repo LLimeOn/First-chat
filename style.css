@@ -47,8 +47,9 @@ body {
     margin-left: auto;
     margin-right: auto;
     /*background-color: #242526;*/
-    padding-top: 10px;
+    /*margin-top: 10px;*/
     z-index: 99;
+    margin-top: 30px;
 }
 
 .bvgkk {
@@ -61,7 +62,7 @@ body {
     max-height: 600px;
     height: 300px;
     overflow-y: scroll;
-    margin-top: 20px;
+    /*margin-top: 20px;*/
 }
 
 .block {
@@ -150,15 +151,12 @@ p {
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #00000017; 
-    border-radius: 20px;
-    margin: 3px;
+    background: #00000017;
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #00000031;
-    border-radius: 20px;
 }
 
 /* Handle on hover */
@@ -181,7 +179,7 @@ p {
 
 p {
     padding: 8px;
-    border-radius: 22px;
+    border-radius: 24px;
 }
 
 p:hover {
