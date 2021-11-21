@@ -197,6 +197,11 @@ urelkaincom.addEventListener("click", function(event) {
     }
 });
 
+rlexitf.addEventListener("click", function(event) {
+    Cookies.remove('name');
+    location.reload();
+});
+
 rlscale.addEventListener("click", function(event) {
     switch (sclf) {
         case 0:
