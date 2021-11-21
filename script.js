@@ -38,7 +38,7 @@ socket.onmessage = function (e) {
             return false;
         case "comp_join":
             reg_bl.hidden = true;
-            chat_a.hidden = false;
+            chat_a.style.display = "block";
             sh_b.hidden = true;
             xmas.remove();
             if (rc.code) {
@@ -117,7 +117,7 @@ socket.onmessage = function (e) {
         case "exited":
             $("#xmas_container").append("<canvas id='xmas'></canvas>")
             reg_bl.hidden = false;
-            chat_a.hidden = true;
+            chat_a.style.display = "none";
             sh_b.hidden = false;
             code_room.innerHTML = "";
             contm.innerHTML = "<p><code>Конец чата</code></p>";
