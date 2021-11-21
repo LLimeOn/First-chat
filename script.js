@@ -73,6 +73,9 @@ socket.onmessage = function (e) {
             };
             data = decodeURI(rc.text);
             data = data.replace(/(?:\r\n|\r|\n)/g, '</br>');
+            if (data == "") {
+                data = "</br>";
+            };
             name_m = decodeURI(rc.name);
             p = document.createElement('p');
             // p.innerHTML = `${data}`;
@@ -171,40 +174,21 @@ let sclf = 0;
 
 let vlumebnbxu = 0;
 
-
+close_uerel.addEventListener("click", function(event) {
+    urelka.hidden = true;
+    fon_ten.hidden = true;
+});
 
 rlpant.addEventListener("click", function(event) {
     urelka.style.top = `${rlpant.style.top}`;
-    if (vlumebnbxu < 1) {
-        urelka.hidden = false;
-        vlumebnbxu = 1;
-    } else if (vlumebnbxu > 0) {
-        urelka.hidden = true;
-        vlumebnbxu = 0;
-    }
-});
-
-urelkain.addEventListener('focus', function (event) {
-    console.log("focus");
-    anime({
-        targets: '#urelkain',
-        borderRadius: '5px',
-        width: '95%',
-
-    });
-});
-
-urelkain.addEventListener('blur', function (event) {
-    console.log("blur");
-    anime({
-        targets: '#urelkain',
-        width: '85%'
-
-    });
+    urelka.hidden = false;
+    fon_ten.hidden = false;
 });
 
 urelkaincom.addEventListener("click", function(event) {
     if (urelkain.value.startsWith('https://') && urelkain.value.endsWith('.png')) {
+        urelka.hidden = true;
+        fon_ten.hidden = true;
         socket.send(JSON.stringify({type: "setIMG", img: urelkain.value, name: name}));
     } else {
         erreor_add("Не верный формат ссылки на изображение")
@@ -320,7 +304,7 @@ snd_v.addEventListener("keydown", function(event) {
         let count = lines.length;
         snd_v.innerHTML = "";
         console.log(count);
-        snd_v.style.height = "15px";
+        // snd_v.style.height = "15px";
         console.log("----------------------------");
         setTimeout('ider = $("#snd_v").find("div").length; if (ider) {console.log(ider); $("#snd_v div").remove()};', 50);
 
@@ -332,17 +316,17 @@ snd_v.addEventListener("keydown", function(event) {
         return false;
     }
     if (event.key === "Enter" && event.shiftKey) {
-        let brNode = document.createElement('br')
+        // let brNode = document.createElement('br')
 
-        let range = window.getSelection().getRangeAt(0);
-        range.deleteContents()
-        range.insertNode(brNode)
-        range.collapse()
+        // let range = window.getSelection().getRangeAt(0);
+        // range.deleteContents()
+        // range.insertNode(brNode)
+        // range.collapse()
 
-        blankSpace = $('#snd_v').find("br").length; //count blank lines
-        trn = $('#snd_v').find("div").length;
-        console.log(" --- " + blankSpace + " - " + (trn-1))
-        snd_v.style.height = blankSpace*15 + trn*15 + 15 + "px";
+        // blankSpace = $('#snd_v').find("br").length; //count blank lines
+        // trn = $('#snd_v').find("div").length;
+        // console.log(" --- " + blankSpace + " - " + (trn-1))
+        // snd_v.style.height = blankSpace*15 + trn*15 + 15 + "px";
 
         return false;
     }
@@ -409,7 +393,7 @@ tosendb_auth.addEventListener('mouseenter', function (event) {
         targets: '#tosendb_auth',
         width: '140',
         delay: 200,
-        backgroundColor: '#404040'
+        backgroundColor: '#7FBE26'
     })
 });
 
@@ -419,7 +403,7 @@ tosendb_auth.addEventListener('mouseleave', function (event) {
         targets: '#tosendb_auth',
         width: '200',
         delay: 300,
-        backgroundColor: '#323232'
+        backgroundColor: '#6ea223'
     })
 });
 

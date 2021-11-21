@@ -40,9 +40,14 @@
                 <img title="Параметры звука" class="hover_img" id="rlvolu" style="position: absolute; top: 110px; right: 30px; cursor: pointer; border-radius: 70px;" src="data/volu.svg" width="13" height="13"></img>
 
                 <div><input class="volume_box" id="slider_volu" type="range" min="0" max="1" value="1" step="0.01" style="position: absolute; top: 110px; right: 17px; cursor: pointer; border-radius: 70px;" hidden></div>
-                <div style="text-align: center; color: white; width:200px; position: absolute; right: 68px; background-color: #444444; padding: 20px; border-radius: 20px;" id="urelka" hidden>
-                    <input class="sendtext_r" style="width: 90%; text-align: center; color: #bbbbbb;" placeholder="Url image" type="text" name="urelka" id="urelkain" id="url_pole">
-                    <input class="sendtext_r" style="width: 50%; margin-top: 15px; color: #bbbbbb; padding: 5px; height: auto; cursor: pointer;" placeholder="Url image" type="button" name="urelka" id="urelkaincom" value="Применить">
+                <div style="position: absolute; width: 100%; height: 100%; background-color: #00000070; top: 0; left: 0;" id="fon_ten" hidden></div>
+                <div style="position: absolute; width: 100%; left: 0; display: flex; justify-content: center; top: 70px;">
+                    <div style="color: white; width:60%; right: 68px; background-color: #444444; padding: 20px; border-radius: 20px; max-width: 700px;" id="urelka" hidden>
+                        <p style="font-size: 20px; margin-top: 0; padding-top: 0; display: flex; justify-content: space-between;" class="on_p">Введите ссылку на изображение в формате: .png <a id="close_uerel" style="cursor: pointer;">×</a></p>
+                        <hr style="margin-bottom: 30px; border: 1px solid #FFFFFF4a;">
+                        <input class="sendtext_r" style="width: 100%; color: #bbbbbb;" placeholder="Url image" type="text" name="urelka" id="urelkain" id="url_pole">
+                        <input class="sendtext_r" style="margin-top: 15px; color: #bbbbbb; padding: 5px; height: auto; cursor: pointer; border: 3px solid #72aa22; color: #FFFFFF; background-color: #72aa22;" placeholder="Url image" type="button" name="urelka" id="urelkaincom" value="Применить">
+                    </div>
                 </div>
 
                 <div class="ent" id="iente">
