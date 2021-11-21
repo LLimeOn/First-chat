@@ -48,6 +48,8 @@ socket.onmessage = function (e) {
             };
             return false;
         case "connection":
+            Cookies.set('name', rc.name, { expires: 27 })
+            console.log(Cookies.get());
             if (rc.agree_connect == 1){
                 st_ty();
                 name = rc.name;
