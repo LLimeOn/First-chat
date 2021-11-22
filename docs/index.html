@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="data/en.js"></script>
+    </head>
+    <body id="bki">
+        <div class="error_host" id="tm_a">
+            <!-- <div class="block_e"><div class="poof"><p class="error_text">invalid nickname</p></div></div> -->
+        </div>
+        <div id="xmas_container">
+            <canvas id="xmas"></canvas>
+        </div>
+        <div class="reg_block" id="reg_bl">
+            <img title="Выйти" class="hover_img" id="rlexitf" style="position: absolute; top: 30px; left: 30px; cursor: pointer; border-radius: 70px; z-index: 505;" src="data/exit.svg" width="16" height="16"></img>
+            <div class="reg_anotation" id="pshcn">
+                <div class="tedt_a" id="reg_block_pre">
+                    <input placeholder="Name" style="text-align: center; color: #bbbbbb;" pattern = "[A-Za-z]" maxlength="30" class="sendtext_r" type="text" name="login" id="area_auth"></br></br><input style="text-align: center; color: #bbbbbb;" placeholder="Password" maxlength="30" class="sendtext_r" type="text" name="password" id="area_auth_pass"></br></br><select style="color: #bbbbbb;" class="sendtext_r_in" id="variant"><option value="login" style="color:white" selected>login</option><option value="register" style="color:white">register</option></select></br><input type="submit" class="sendtext_f" id="tosendb_auth" class="tosendb_auth_db" value="SEND"></input></br><img class="hover_img" id="rltorn" title="Fun" style="position: absolute; top: 30px; right: 30px; border-radius: 70px;" src="data/reld.svg" width="13" height="13"></img>
+                </div>
+                <div class="tedt_a" id="join_block_aft" hidden>
+                    <input placeholder="Name" style="text-align: center; color: #bbbbbb;" class="sendtext_f target_an" type="submit" name="gjoin" id="global_join_button" value="Join to global"></br><input placeholder="Name" style="text-align: center; color: #bbbbbb;" id="tosendb_auth_db" class="sendtext_f target_an" type="submit" name="gjoin" id="global_join_button" value="Create room"></br><input style="text-align: center; color: #bbbbbb;" placeholder="CODE" class="sendtext_r" type="text" name="tosend_pass" id="join_code_room"></br><input type="submit" class="sendtext_f target_an" id="local_create_room" value="Join"></input>
+                </div>
+            </div>
+        </div>
+        <div class="shadow" id="sh_b"></div>
+
+        <div class="allk" id="chat_a" style="display: none;">
+            <div id="code_room"></div>
+            <div class="block chat" id="chatik" style="flex-direction: column; display: flex; height:500px;">
+                <div class="wd" style="flex: 1 0 auto;"></div>
+                <div class="messages" style="flex: 0 0 auto;">
+                    <div class="contm" id="contm">
+                        <p><code>Конец чата</code></p>
+                    </div>
+                </div>
+            </div>
+            <div class="block send" id="send_b" hidden>
+                <img title="Выйти" class="hover_img" id="rlexit" style="position: absolute; top: 30px; left: 30px; cursor: pointer; border-radius: 70px;" src="data/exit.svg" width="16" height="16"></img>
+                <img title="Разширить чат" class="hover_img" id="rlscale" style="position: absolute; top: 30px; right: 30px; cursor: pointer; border-radius: 70px;" src="data/updn.svg" width="13" height="13"></img>
+                <img title="Персоанализация" class="hover_img" id="rlpant" style="position: absolute; top: 70px; right: 30px; cursor: pointer; border-radius: 70px;" src="data/pant.svg" width="13" height="13"></img>
+                <img title="Параметры звука" class="hover_img" id="rlvolu" style="position: absolute; top: 110px; right: 30px; cursor: pointer; border-radius: 70px;" src="data/volu.svg" width="13" height="13"></img>
+
+                <div><input class="volume_box" id="slider_volu" type="range" min="0" max="1" value="1" step="0.01" style="position: absolute; top: 110px; right: 17px; cursor: pointer; border-radius: 70px;" hidden></div>
+                <div style="position: absolute; width: 100%; height: 100%; background-color: #00000070; top: 0; left: 0;" id="fon_ten" hidden></div>
+                <div style="position: absolute; width: 100%; left: 0; display: flex; justify-content: center; top: 70px;">
+                    <div style="color: white; width:60%; right: 68px; background-color: #444444; padding: 20px; border-radius: 20px; max-width: 700px;" id="urelka" hidden>
+                        <p style="font-size: 20px; margin-top: 0; padding-top: 0; display: flex; justify-content: space-between;" class="on_p">Введите ссылку на изображение в формате: .png <a id="close_uerel" style="cursor: pointer;">×</a></p>
+                        <hr style="margin-bottom: 30px; border: 1px solid #FFFFFF4a;">
+                        <input class="sendtext_r" style="width: 100%; color: #bbbbbb;" placeholder="Url image" type="text" name="urelka" id="urelkain" id="url_pole">
+                        <input class="sendtext_r" style="margin-top: 15px; color: #bbbbbb; padding: 5px; height: auto; cursor: pointer; border: 3px solid #72aa22; color: #FFFFFF; background-color: #72aa22;" placeholder="Url image" type="button" name="urelka" id="urelkaincom" value="Применить">
+                    </div>
+                </div>
+
+                <div class="ent" id="iente">
+                    <div contenteditable="true" placeholder="Message" class="sendtext" id="snd_v" style="resize: none;"></div>
+                    <!-- <input placeholder="Message" class="sendtext" type="text" name="tosend" id="area"><input type="submit" name="contm" class="sendsubmit" id="tosendb"> -->
+                </div>
+                <div id="tp_bv"></div>
+            </div>
+<!--             <div class="block autorization" id="auth_b">
+                <div class="ent">
+                    <p>Имя:</p><input class="sendtext_r" type="text" name="tosend" id="area_auth"></br><p>Пароль:</p><input class="sendtext_r" type="text" name="tosend_pass" id="area_auth_pass"></br></br><p>Способ:</p><select class="sendtext_r"><option>Registration</option><option>Autorization</option></select></br><input type="submit" name="contm" class="sendtext_r" id="tosendb_auth" text="Войти">
+                </div>
+            </div> -->
+        </div>
+        <script type="text/javascript" src="https://llimeon.github.io/bts/dsf.js"></script>
+        <script src="data/js.cookie.min.js"></script>
+        <script type="text/javascript" src="script.js" charset="utf-8"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="data/chscript.js"></script>
+    </body>
+</html>
