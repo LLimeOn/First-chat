@@ -356,7 +356,7 @@ p code {
     margin-left: 40px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
     .reg_anotation {
         width: 80%;
     }
