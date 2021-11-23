@@ -170,6 +170,8 @@ function typing() {
 
 let sclf = 0;
 
+let phone_size = 1200;
+
 // rlpant.addEventListener("click", function(event) {
 //     bki.style.backgroundImage = "url('https://i.imgur.com/d6eO5HC.jpg')"
 // });
@@ -369,7 +371,7 @@ snd_v.addEventListener("keydown", function(event) {
 let sendtext_f_items = document.getElementsByClassName("target_an");
 
 for (let i = 0; i < sendtext_f_items.length; i++) {
-    if (innerWidth > 900) {
+    if (innerWidth > 1200) {
         console.log("add");
         sendtext_f_items[i].addEventListener('mouseenter', function (event) {
             console.log("enter!");
@@ -384,7 +386,7 @@ for (let i = 0; i < sendtext_f_items.length; i++) {
 };
 
 for (let i = 0; i < sendtext_f_items.length; i++) {
-    if (innerWidth > 900) {
+    if (innerWidth > 1200) {
         console.log("add_remove");
         sendtext_f_items[i].addEventListener('mouseleave', function (event) {
             console.log("leave!");
@@ -399,7 +401,7 @@ for (let i = 0; i < sendtext_f_items.length; i++) {
 };
 
 tosendb_auth.addEventListener('mouseenter', function (event) {
-    if (innerWidth > 900) {
+    if (innerWidth > 1200) {
         console.log("enter!");
         anime({
             targets: '#tosendb_auth',
@@ -410,7 +412,7 @@ tosendb_auth.addEventListener('mouseenter', function (event) {
 });
 
 tosendb_auth.addEventListener('mouseleave', function (event) {
-    if (innerWidth > 900) {
+    if (innerWidth > 1200) {
         console.log("leave!");
         anime({
             targets: '#tosendb_auth',
@@ -421,7 +423,7 @@ tosendb_auth.addEventListener('mouseleave', function (event) {
 });
 
 join_code_room.addEventListener('focus', function (event) {
-    if (innerWidth > 900) {
+    if (innerWidth > 1200) {
         console.log("focus");
         anime({
             targets: '#join_code_room',
@@ -433,7 +435,7 @@ join_code_room.addEventListener('focus', function (event) {
 });
 
 join_code_room.addEventListener('blur', function (event) {
-    if (innerWidth > 900) {
+    if (innerWidth > 1200) {
         console.log("blur");
         anime({
             targets: '#join_code_room',
@@ -444,7 +446,7 @@ join_code_room.addEventListener('blur', function (event) {
 });
 
 area_auth.addEventListener('focus', function (event) {
-    if (innerWidth > 900) {
+    if (innerWidth > 1200) {
         console.log("focus");
         anime({
             targets: '#area_auth',
@@ -454,7 +456,7 @@ area_auth.addEventListener('focus', function (event) {
 });
 
 area_auth.addEventListener('blur', function (event) {
-    if (innerWidth > 900) {
+    if (innerWidth > 1200) {
         console.log("blur");
         anime({
             targets: '#area_auth',
@@ -465,7 +467,7 @@ area_auth.addEventListener('blur', function (event) {
 });
 
 area_auth_pass.addEventListener('focus', function (event) {
-    if (innerWidth > 900) {
+    if (innerWidth > 1200) {
         console.log("focus");
         anime({
             targets: '#area_auth_pass',
@@ -477,7 +479,7 @@ area_auth_pass.addEventListener('focus', function (event) {
 });
 
 area_auth_pass.addEventListener('blur', function (event) {
-    if (innerWidth > 900) {
+    if (innerWidth > 1200) {
         console.log("blur");
         anime({
             targets: '#area_auth_pass',
