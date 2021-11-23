@@ -82,7 +82,7 @@ socket.onmessage = function (e) {
             p = document.createElement('p');
             // p.innerHTML = `${data}`;
             // p.innerHTML = `<code>${name_m}</code>: <div class="bvgkk">${data}</div>`;
-            p.innerHTML = `<img onError="this.src='data/thumb_user.png'" src="${img}" aria-hidden="true" class="avatar-1BDn8e clickable-1bVtEA" alt=" " width="35" height="35" style="border-radius:18px; position: absolute;"><code style="display: inline-flex; padding-left: 44px; font-size: 13px; margin-bottom: 2px;">${name_m}</code><br><div style="display: inline-flex;padding-left: 44px;color: #cbcbcb; flex-direction: column;">${data}</div>`;
+            p.innerHTML = `<img onError="this.src='data/thumb_user.png'" src="${img}" aria-hidden="true" class="avatar-1BDn8e clickable-1bVtEA" alt=" " width="35" height="35" style="border-radius:18px; position: absolute;"><code style="display: inline-flex; padding-left: 44px; margin-bottom: 2px;">${name_m}</code><br><div style="display: inline-flex;padding-left: 44px;color: #cbcbcb; flex-direction: column;">${data}</div>`;
             p.setAttribute("onclick", "this.hidden = true");
             p.setAttribute("style", "position: relative; margin-top: 10px;");
             contm.append(p);
@@ -108,7 +108,7 @@ socket.onmessage = function (e) {
                 data = data.replace(/(?:\r\n|\r|\n)/g, '</br>');
                 console.log(listik);
                 p = document.createElement('p');
-                p.innerHTML = `<img onError="this.src='data/thumb_user.png'" src="${img}" aria-hidden="true" class="avatar-1BDn8e clickable-1bVtEA" alt=" " width="35" height="35" style="border-radius:18px; position: absolute;"><code style="display: inline-flex; padding-left: 44px; font-size: 13px; margin-bottom: 2px;">${decodeURI(listik.name)}</code><br><div style="display: inline-flex;padding-left: 44px;color: #cbcbcb; flex-direction: column;">${data}</div>`;
+                p.innerHTML = `<img onError="this.src='data/thumb_user.png'" src="${img}" aria-hidden="true" class="avatar-1BDn8e clickable-1bVtEA" alt=" " width="35" height="35" style="border-radius:18px; position: absolute;"><code style="display: inline-flex; padding-left: 44px; margin-bottom: 2px;">${decodeURI(listik.name)}</code><br><div style="display: inline-flex;padding-left: 44px;color: #cbcbcb; flex-direction: column;">${data}</div>`;
                 p.setAttribute("onclick", "this.hidden = true");
                 p.setAttribute("style", "position: relative; margin-top: 10px;");
                 contm.append(p);
@@ -369,106 +369,122 @@ snd_v.addEventListener("keydown", function(event) {
 let sendtext_f_items = document.getElementsByClassName("target_an");
 
 for (let i = 0; i < sendtext_f_items.length; i++) {
-    console.log("add");
-    sendtext_f_items[i].addEventListener('mouseenter', function (event) {
-        console.log("enter!");
-        anime({
-            targets: sendtext_f_items[i],
-            width: '140',
-            delay: 200,
-            backgroundColor: '#404040'
-        })
-    });
+    if (innerWidth > 900) {
+        console.log("add");
+        sendtext_f_items[i].addEventListener('mouseenter', function (event) {
+            console.log("enter!");
+            anime({
+                targets: sendtext_f_items[i],
+                width: '140',
+                delay: 200,
+                backgroundColor: '#404040'
+            })
+        });
+    };
 };
 
 for (let i = 0; i < sendtext_f_items.length; i++) {
-    console.log("add_remove");
-    sendtext_f_items[i].addEventListener('mouseleave', function (event) {
-        console.log("leave!");
-        anime({
-            targets: sendtext_f_items[i],
-            width: '200',
-            delay: 300,
-            backgroundColor: '#323232'
-        })
-    });
+    if (innerWidth > 900) {
+        console.log("add_remove");
+        sendtext_f_items[i].addEventListener('mouseleave', function (event) {
+            console.log("leave!");
+            anime({
+                targets: sendtext_f_items[i],
+                width: '200',
+                delay: 300,
+                backgroundColor: '#323232'
+            })
+        });
+    };
 };
 
 tosendb_auth.addEventListener('mouseenter', function (event) {
-    console.log("enter!");
-    anime({
-        targets: '#tosendb_auth',
-        width: '140',
-        delay: 200,
-        backgroundColor: '#7FBE26'
-    })
+    if (innerWidth > 900) {
+        console.log("enter!");
+        anime({
+            targets: '#tosendb_auth',
+            width: '140px',
+            delay: 200,
+            backgroundColor: '#7FBE26'
+    })} else {};
 });
 
 tosendb_auth.addEventListener('mouseleave', function (event) {
-    console.log("leave!");
-    anime({
-        targets: '#tosendb_auth',
-        width: '200',
-        delay: 300,
-        backgroundColor: '#6ea223'
-    })
+    if (innerWidth > 900) {
+        console.log("leave!");
+        anime({
+            targets: '#tosendb_auth',
+            width: '200px',
+            delay: 300,
+            backgroundColor: '#6ea223'
+    })} else {};
 });
 
 join_code_room.addEventListener('focus', function (event) {
-    console.log("focus");
-    anime({
-        targets: '#join_code_room',
-        borderRadius: '5px',
-        width: '270',
+    if (innerWidth > 900) {
+        console.log("focus");
+        anime({
+            targets: '#join_code_room',
+            borderRadius: '5px',
+            width: '270',
 
-    });
+        });
+    };
 });
 
 join_code_room.addEventListener('blur', function (event) {
-    console.log("blur");
-    anime({
-        targets: '#join_code_room',
-        width: '200'
+    if (innerWidth > 900) {
+        console.log("blur");
+        anime({
+            targets: '#join_code_room',
+            width: '200'
 
-    });
+        });
+    };
 });
 
 area_auth.addEventListener('focus', function (event) {
-    console.log("focus");
-    anime({
-        targets: '#area_auth',
-        borderRadius: '5px',
-        width: '270',
-
-    });
+    if (innerWidth > 900) {
+        console.log("focus");
+        anime({
+            targets: '#area_auth',
+            borderRadius: '5px',
+            width: '270',
+    })} else {};
 });
 
 area_auth.addEventListener('blur', function (event) {
-    console.log("blur");
-    anime({
-        targets: '#area_auth',
-        width: '200'
+    if (innerWidth > 900) {
+        console.log("blur");
+        anime({
+            targets: '#area_auth',
+            width: '200'
 
-    });
+        });
+    };
 });
 
 area_auth_pass.addEventListener('focus', function (event) {
-    console.log("focus");
-    anime({
-        targets: '#area_auth_pass',
-        borderRadius: '5px',
-        width: '270',
+    if (innerWidth > 900) {
+        console.log("focus");
+        anime({
+            targets: '#area_auth_pass',
+            borderRadius: '5px',
+            width: '270',
 
-    });
+        });
+    };
 });
 
 area_auth_pass.addEventListener('blur', function (event) {
-    console.log("blur");
-    anime({
-        targets: '#area_auth_pass',
-        width: '200'
+    if (innerWidth > 900) {
+        console.log("blur");
+        anime({
+            targets: '#area_auth_pass',
+            width: '200'
 
-    });
+        });
+    };
 });
 
 // fcn
